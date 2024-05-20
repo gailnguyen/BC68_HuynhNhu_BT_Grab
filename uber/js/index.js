@@ -209,12 +209,19 @@ document.getElementById("btnInHoaDon").onclick = () => {
   $("#myModal").modal("show");
   document.querySelector(
     ".modal-body"
-  ).innerHTML = `<table border='1' style="width: 100%; text-align: center">
+  ).innerHTML = `<table class="table table-bordered text-center w-100 fw-bold">
+  <thead style="background-color: AliceBlue;">
   <tr>
-  <th style="text-align: center">CHI TIẾT</th>
-  <th style="text-align: center">SỬ DỤNG</th>
-  <th style="text-align: center">ĐƠN GIÁ</th>
-  <th style="text-align: center">THÀNH TIỀN</th>
+  <th colspan="4" style="text-align: center;">CHI TIẾT HÓA ĐƠN</th>
+  </tr>
+  </thead>
+
+  <body>
+  <tr>
+  <td>CHI TIẾT</td>
+  <td>SỬ DỤNG</td>
+  <td>ĐƠN GIÁ</td>
+  <td>THÀNH TIỀN</td>
   </tr>
 
   <tr>
@@ -228,7 +235,7 @@ document.getElementById("btnInHoaDon").onclick = () => {
   </tr>
 
   <tr>
-  <td>Từ 1 đến 19</td>
+  <td>Từ KM 1 đến 19</td>
   <td>${soKmTu1Den19}</td>
   <td>${giaTienKmTu1Den19}</td>
   <td>${tienKmTu1Den19.toLocaleString("vi", {
@@ -238,7 +245,7 @@ document.getElementById("btnInHoaDon").onclick = () => {
   </tr>
 
   <tr>
-  <td>Từ 19 trở lên</td>
+  <td>Từ KM 19 trở lên</td>
   <td>${soKmTu19TroLen}</td>
   <td>${giaTienKmTu19TroLen}</td>
   <td>${tienKmTu19TroLen.toLocaleString("vi", {
@@ -248,7 +255,7 @@ document.getElementById("btnInHoaDon").onclick = () => {
   </tr>
 
   <tr>
-  <td>Thời gian chờ</td>
+  <td>Thời gian chờ (Phút)</td>
   <td>${thoiGianCho}</td>
   <td>${giaTienCho}</td>
   <td>${tienCho.toLocaleString("vi", {
@@ -258,10 +265,10 @@ document.getElementById("btnInHoaDon").onclick = () => {
   </tr>
 
   <tr>
-  <td colspan="4">TỔNG TIỀN: ${tongTien.toLocaleString("vi", {
-    style: "currency",
-    currency: "VND",
-  })}</td>
+  <td colspan="4" style="text-align: right;">TỔNG TIỀN: ${tongTien.toLocaleString(
+    "vi-VN"
+  )} VND</td>
   </tr>
+  </body>
   </table>`;
 };
